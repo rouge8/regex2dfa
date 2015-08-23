@@ -90,6 +90,10 @@ install:
   # target Python version and architecture
   - "%CMD_IN_ENV% pip install wheel"
 
+  # Prepend MinGW to the PATH of the build
+  - if [%PYTHON_ARCH%]==[32] SET PATH=C:\MinGW\bin;%PATH%
+  - if [%PYTHON_ARCH%]==[64] SET PATH=C:\mingw64\bin;%PATH%
+
 build: false  # Not a C# project, build stuff at the test step instead.
 
 test_script:
