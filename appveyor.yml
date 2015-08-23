@@ -93,7 +93,7 @@ install:
   # Prepend MinGW to the PATH of the build
   - if [%PYTHON_ARCH%]==[32] SET PATH=C:\MinGW\bin;%PATH%
   - if [%PYTHON_ARCH%]==[64] SET PATH=C:\mingw64\bin;%PATH%
-  - ps: "ls \"C:/MinGW/bin/\""
+  - sh --login
 
 build: false  # Not a C# project, build stuff at the test step instead.
 
