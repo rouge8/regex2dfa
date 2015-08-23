@@ -12,7 +12,7 @@ class R2DBuild(build_ext):
         # subprocess.check_call will raise an exception if any of the commands
         # do not complete successfully.
         subprocess.check_call(['sh', 'configure'])
-        subprocess.check_call(['sh', '-c', 'make'])
+        subprocess.check_call(['make'])
         return build_ext.build_extension(self, ext)
 
 
