@@ -93,9 +93,11 @@ install:
   # Prepend MinGW to the PATH of the build
   - if [%PYTHON_ARCH%]==[32] SET PATH=C:\MinGW\bin;%PATH%
   - if [%PYTHON_ARCH%]==[64] SET PATH=C:\mingw64\bin;%PATH%
-  - sh --login
 
 build: false  # Not a C# project, build stuff at the test step instead.
+
+build_script:
+  - sh --login python setup.py build
 
 test_script:
   # Build the compiled extension and run the project tests
