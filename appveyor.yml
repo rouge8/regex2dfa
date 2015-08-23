@@ -97,7 +97,7 @@ install:
 build: false  # Not a C# project, build stuff at the test step instead.
 
 build_script:
-  - sh --login python setup.py build
+  - "%CMD_IN_ENV% sh --login python setup.py build"
 
 test_script:
   # Build the compiled extension and run the project tests
