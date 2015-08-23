@@ -97,9 +97,7 @@ install:
   - ps: "ls \"C:/MinGW/bin/\""
 
   # Update configuration files for Windows
-  - "echo %PATH%"
-  - '%CMD_IN_ENV% echo "%PATH%"'
-  - "%CMD_IN_ENV% C:/MinGW/bin/autoreconf --force"
+  - "%CMD_IN_ENV% sh -c autoconf"
 
 build: false  # Not a C# project, build stuff at the test step instead.
 
