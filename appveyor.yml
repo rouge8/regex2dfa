@@ -94,10 +94,12 @@ install:
   - if [%PYTHON_ARCH%]==[32] SET PATH=C:\MinGW\bin;%PATH%
   - if [%PYTHON_ARCH%]==[64] SET PATH=C:\mingw64\bin;%PATH%
 
+  # Update configuration files for Windows
+  - "%CMD_IN_ENV% autoreconf --build"
+
 build: false  # Not a C# project, build stuff at the test step instead.
 
 build_script:
-  - "%CMD_IN_ENV% autoconf"
   - "%CMD_IN_ENV% python setup.py build"
 
 test_script:
